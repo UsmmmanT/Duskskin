@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import hero from '../images/hero.png';
+import logo from '../images/logo.png';
 
 const Hero = () => {
     return (
         <section
             className="relative flex flex-col items-center justify-center w-full mt-4 overflow-hidden bg-white mx-auto"
             style={{
-                backgroundImage: `url(${hero})`,
+                backgroundImage: `url(${logo})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
             }}
