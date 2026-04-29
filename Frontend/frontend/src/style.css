@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:wght@300;400;500&display=swap');
+@import "tailwindcss";
+
+:root {
+  --color-brand-primary: #2D4A3E;      /* Deep forest green — nav, buttons, accents */
+  --color-brand-secondary: #C9A96E;    /* Warm gold — highlights, hover states */
+  --color-brand-accent: #F2EDE4;       /* Warm cream — backgrounds, cards */
+  --color-brand-dark: #1A2E27;         /* Near-black green — footer, overlays */
+  --color-brand-light: #FAFAF8;        /* Off-white — page background */
+  --color-text-primary: #1C1C1C;
+  --color-text-secondary: #6B6B6B;
+  --color-border: #E0DAD2;
+  --font-display: 'Cormorant Garamond', serif;   /* Hero headings, brand name */
+  --font-body: 'DM Sans', sans-serif;             /* All UI text, navigation */
+}
+
+* {
+  font-family: var(--font-body);
+}
+
+body{
+  background-color: var(--color-brand-light);
+}
+
+a hr {
+  display: none;
+}
+
+a.active hr {
+  display: block;
+}
+
+::-webkit-scrollbar
+{
+  display:none;
+}
+@media (max-width: 600px) {
+ a.active{
+  background-color:black;
+  color:white;
+ }
+}
