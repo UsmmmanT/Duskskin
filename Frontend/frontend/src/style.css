@@ -2,8 +2,8 @@
 @import "tailwindcss";
 
 :root {
-  --color-brand-primary: #2D4A3E;      /* Deep forest green — nav, buttons, accents */
-  --color-brand-secondary: #C9A96E;    /* Warm gold — highlights, hover states */
+  --color-brand-primary: #f098ac;      /* Deep forest green — nav, buttons, accents */
+  --color-brand-secondary: #000000;    /* Warm gold — highlights, hover states */
   --color-brand-accent: #F2EDE4;       /* Warm cream — backgrounds, cards */
   --color-brand-dark: #1A2E27;         /* Near-black green — footer, overlays */
   --color-brand-light: #FAFAF8;        /* Off-white — page background */
@@ -18,10 +18,15 @@
   font-family: var(--font-body);
 }
 
-body{
-  background-color: var(--color-brand-light);
+html,
+body,
+#root {
   margin: 0;
   padding: 0;
+}
+
+body{
+  background-color: var(--color-brand-light);
 }
 
 a hr {
@@ -38,7 +43,7 @@ a.active hr {
 }
 @media (max-width: 600px) {
  a.active{
-  background-color:black;
-  color:white;
+  background-color:#FFE3E9;
+  color:rgb(0, 0, 0);
  }
 }

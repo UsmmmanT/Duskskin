@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import logo from '../images/logo.png'
+import logo2 from '../images/duskskin_logo.svg'
 import search from '../images/search.png'
 import user from '../images/user.png'
 import coffeeShop from '../images/coffeeShop.png'
@@ -8,6 +8,7 @@ import back from '../images/back.png'
 import { Link, NavLink } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext'
 import { toast } from 'react-toastify'
+import Announcement from './Announcement'
 
 const NavBar = () => {
   const [visible, setVisible] = React.useState(false)
@@ -16,7 +17,7 @@ const NavBar = () => {
   const navLinks = [
     { to: '/', label: 'HOME' },
     { to: '/collection', label: 'COLLECTION' },
-    { to: '/about', label: 'ABOUT' },
+    { to: '/about', label: 'ORIGINS' },
     { to: '/contact', label: 'CONTACT' },
   ]
 
@@ -30,102 +31,131 @@ const NavBar = () => {
 
   return (
     <div className='w-full sticky top-0 z-20'>
-      {/* Announcement Bar */}
-      <div
-        style={{
-          background: 'var(--color-brand-primary)',
-          color: 'white',
-          textAlign: 'center',
-          padding: '8px',
-          fontSize: '13px',
-          fontFamily: 'var(--font-body)',
-          letterSpacing: '0.04em',
-        }}
-      >
-        Get FREE SHIPPING on orders above PKR 2,500
-      </div>
+      <Announcement />
 
       {/* Single Unified Navbar Row */}
       <div
         className='border-b'
-        style={{ borderColor: 'var(--color-border)', backgroundColor: 'white' }}
+        style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-brand-light)' }}
       >
-        <div className='flex items-center justify-between px-4 sm:px-8 h-16 gap-4'>
-
-          {/* LEFT: Logo */}
-          <Link to='/' className='flex items-center justify-center flex-shrink-0'>
-            <img className='h-8 sm:h-10' src={logo} alt='DuskSkin logo' />
-          </Link>
-
-          {/* CENTER: Desktop nav links or Mobile hamburger */}
-          <div className='flex-1 flex items-center justify-center'>
-            {/* Mobile: hamburger */}
+        <div className='px-4 sm:px-8 h-16'>
+          {/* Mobile Layout: Hamburger | Logo | Cart + Account */}
+          <div className='sm:hidden flex items-center justify-between h-16 gap-4'>
+            {/* Mobile Left: Hamburger */}
             <button
               type='button'
               onClick={() => setVisible(true)}
-              className='sm:hidden flex items-center justify-center w-9 h-9'
+              className='flex items-center justify-center w-9 h-9 flex-shrink-0'
             >
               <img src={list} className='w-5 h-5' alt='Menu' style={{ filter: 'brightness(0)' }} />
             </button>
 
-            {/* Desktop: nav links centered */}
-            <nav className='hidden sm:flex items-center gap-8'>
-              {navLinks.map((item) => (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  className='px-2 py-2 text-sm font-medium tracking-wide transition-colors'
-                  style={({ isActive }) => ({
-                    color: isActive ? 'var(--color-brand-primary)' : 'var(--color-text-secondary)',
-                    borderBottom: isActive ? '2px solid var(--color-brand-primary)' : '2px solid transparent',
-                  })}
-                >
-                  {item.label}
-                </NavLink>
-              ))}
-            </nav>
-          </div>
+            {/* Mobile Center: Logo */}
+            <Link to='/' className='flex items-center justify-center flex-1'>
+              <img className='h-6 w-auto' src={logo2} alt='DuskSkin logo' />
+            </Link>
 
-          {/* RIGHT: Icons */}
-          <div className='flex items-center gap-2 flex-shrink-0'>
-            {/* Search */}
-            <button
-              type='button'
-              onClick={() => setShowSearch(true)}
-              className='hidden sm:flex h-9 w-9 items-center justify-center'
-            >
-              <img src={search} className='w-4' alt='Search' style={{ filter: 'brightness(0)' }} />
-            </button>
-
-            {/* Account dropdown */}
-            <div className='hidden sm:block group relative'>
-              <Link to='/login' className='flex h-9 w-9 items-center justify-center'>
-                <img src={user} className='w-4' alt='Account' style={{ filter: 'brightness(0)' }} />
-              </Link>
-              <div className='absolute right-0 z-20 hidden pt-4 group-hover:block'>
-                <div
-                  className='flex w-44 flex-col gap-2 rounded border shadow-sm'
-                  style={{ backgroundColor: 'var(--color-brand-accent)', borderColor: 'var(--color-border)' }}
-                >
-                  <p onClick={() => navigate('/login')} className='cursor-pointer px-4 py-2 text-sm hover:opacity-70'>My Account</p>
-                  <p onClick={() => navigate('/orders')} className='cursor-pointer px-4 py-2 text-sm hover:opacity-70'>My Orders</p>
-                  {token && <p onClick={logout} className='cursor-pointer px-4 py-2 text-sm hover:opacity-70'>Logout</p>}
+            {/* Mobile Right: Profile + Cart */}
+            <div className='flex items-center gap-2 flex-shrink-0'>
+              {/* Account dropdown */}
+              <div className='group relative'>
+                <Link to='/login' className='flex h-9 w-9 items-center justify-center'>
+                  <img src={user} className='w-4' alt='Account' style={{ filter: 'brightness(0)' }} />
+                </Link>
+                <div className='absolute right-0 z-20 hidden pt-4 group-hover:block'>
+                  <div
+                    className='flex w-44 flex-col gap-2 rounded border shadow-sm'
+                    style={{ backgroundColor: 'var(--color-brand-accent)', borderColor: 'var(--color-border)' }}
+                  >
+                    <p onClick={() => navigate('/login')} className='cursor-pointer px-4 py-2 text-sm hover:opacity-70'>My Account</p>
+                    <p onClick={() => navigate('/orders')} className='cursor-pointer px-4 py-2 text-sm hover:opacity-70'>My Orders</p>
+                    {token && <p onClick={logout} className='cursor-pointer px-4 py-2 text-sm hover:opacity-70'>Logout</p>}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Cart */}
-            <Link to='/cart' className='relative flex h-9 w-9 items-center justify-center'>
-              <img src={coffeeShop} className='w-4' alt='Cart' style={{ filter: 'brightness(0)' }} />
-              {getCartCount() > 0 && (
-                <span
-                  className='absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full text-white text-xs font-bold'
-                  style={{ backgroundColor: 'var(--color-brand-secondary)' }}
-                >
-                  {getCartCount()}
-                </span>
-              )}
+              {/* Cart */}
+              <Link to='/cart' className='relative flex h-9 w-9 items-center justify-center'>
+                <img src={coffeeShop} className='w-4' alt='Cart' style={{ filter: 'brightness(0)' }} />
+                {getCartCount() > 0 && (
+                  <span
+                    className='absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full text-white text-xs font-bold'
+                    style={{ backgroundColor: 'var(--color-brand-secondary)' }}
+                  >
+                    {getCartCount()}
+                  </span>
+                )}
+              </Link>
+            </div>
+          </div>
+
+          {/* Desktop Layout: Logo | Nav Links | Icons */}
+          <div className='hidden sm:flex items-center justify-between h-16 gap-4'>
+            {/* Desktop Left: Logo */}
+            <Link to='/' className='flex items-center justify-center flex-shrink-0 h-16'>
+              <img className='h-6 sm:h-7 w-auto' src={logo2} alt='DuskSkin logo' />
             </Link>
+
+            {/* Desktop Center: Nav links */}
+            <nav className='flex-1 flex items-center justify-center'>
+              <div className='flex items-center gap-8'>
+                {navLinks.map((item) => (
+                  <NavLink
+                    key={item.to}
+                    to={item.to}
+                    className='px-2 py-2 text-sm font-medium tracking-wide transition-colors'
+                    style={({ isActive }) => ({
+                      color: isActive ? 'var(--color-brand-primary)' : 'var(--color-text-secondary)',
+                      borderBottom: isActive ? '2px solid var(--color-brand-primary)' : '2px solid transparent',
+                    })}
+                  >
+                    {item.label}
+                  </NavLink>
+                ))}
+              </div>
+            </nav>
+
+            {/* Desktop Right: Icons */}
+            <div className='flex items-center gap-2 flex-shrink-0'>
+              {/* Search */}
+              <button
+                type='button'
+                onClick={() => setShowSearch(true)}
+                className='flex h-9 w-9 items-center justify-center'
+              >
+                <img src={search} className='w-4' alt='Search' style={{ filter: 'brightness(0)' }} />
+              </button>
+
+              {/* Account dropdown */}
+              <div className='group relative'>
+                <Link to='/login' className='flex h-9 w-9 items-center justify-center'>
+                  <img src={user} className='w-4' alt='Account' style={{ filter: 'brightness(0)' }} />
+                </Link>
+                <div className='absolute right-0 z-20 hidden pt-4 group-hover:block'>
+                  <div
+                    className='flex w-44 flex-col gap-2 rounded border shadow-sm'
+                    style={{ backgroundColor: 'var(--color-brand-accent)', borderColor: 'var(--color-border)' }}
+                  >
+                    <p onClick={() => navigate('/login')} className='cursor-pointer px-4 py-2 text-sm hover:opacity-70'>My Account</p>
+                    <p onClick={() => navigate('/orders')} className='cursor-pointer px-4 py-2 text-sm hover:opacity-70'>My Orders</p>
+                    {token && <p onClick={logout} className='cursor-pointer px-4 py-2 text-sm hover:opacity-70'>Logout</p>}
+                  </div>
+                </div>
+              </div>
+
+              {/* Cart */}
+              <Link to='/cart' className='relative flex h-9 w-9 items-center justify-center'>
+                <img src={coffeeShop} className='w-4' alt='Cart' style={{ filter: 'brightness(0)' }} />
+                {getCartCount() > 0 && (
+                  <span
+                    className='absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full text-white text-xs font-bold'
+                    style={{ backgroundColor: 'var(--color-brand-secondary)' }}
+                  >
+                    {getCartCount()}
+                  </span>
+                )}
+              </Link>
+            </div>
           </div>
         </div>
       </div>

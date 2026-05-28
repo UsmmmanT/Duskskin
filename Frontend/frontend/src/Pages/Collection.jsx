@@ -89,7 +89,7 @@ const Collection = () => {
           className='my-2 flex items-center gap-2 text-sm font-semibold uppercase tracking-widest cursor-pointer'
           style={{ color: 'var(--color-brand-primary)' }}
         >
-          Filter by Category
+          Filter by Supplements
           <img
             onClick={() => setShowFilter(!showFilter)}
             className={`h-5 sm:hidden transition-transform ${showFilter ? 'rotate-90' : ''}`}
@@ -104,7 +104,7 @@ const Collection = () => {
           style={{ backgroundColor: 'var(--color-brand-accent)', borderColor: 'var(--color-border)' }}
         >
           <p className='mb-4 text-xs font-semibold uppercase tracking-widest' style={{ color: 'var(--color-brand-primary)' }}>
-            Categories
+            Supplements
           </p>
 
           <div className='flex flex-col gap-3 text-sm'>
