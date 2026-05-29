@@ -1,4 +1,4 @@
-#Duskskin
+# Duskskin
 E-commerce website for beauty products brand. Built using MERN stack.
 Seperate Admin page to handle product management.
 Website is deployed on vercel.
