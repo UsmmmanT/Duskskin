@@ -110,16 +110,19 @@ const Collection = () => {
           <div className='flex flex-col gap-3 text-sm'>
             {CATEGORIES.map(cat => (
               <div key={cat.value}>
-                <label className='flex items-center gap-3 cursor-pointer' style={{ color: 'var(--color-text-primary)' }}>
-                  <input
-                    type="checkbox"
-                    checked={selectedCategory === cat.value}
-                    onChange={() => toggleCategory(cat.value)}
-                    className='h-4 w-4'
-                    style={{ accentColor: 'var(--color-brand-primary)' }}
-                  />
+                <button
+                  type='button'
+                  onClick={() => toggleCategory(cat.value)}
+                  className='flex w-full items-center justify-between gap-3 rounded px-1 py-1 text-left transition-colors hover:bg-black/5'
+                  style={{ color: 'var(--color-text-primary)' }}
+                >
                   <span className='text-sm font-medium'>{cat.label}</span>
-                </label>
+                  <img
+                    src={down}
+                    alt=''
+                    className={`h-4 w-4 transition-transform ${selectedCategory === cat.value ? 'rotate-180' : ''}`}
+                  />
+                </button>
 
                 {/* Subcategories - shown when parent is selected */}
                 {selectedCategory === cat.value && SUBCATEGORIES[cat.value] && (

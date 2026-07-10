@@ -11,7 +11,7 @@ const Footer = () => {
                         <img className='w-32 sm:w-40 h-auto rounded-xl' src={logo}  alt='DuskSkin logo' />
                     </Link>
                     <p className='mt-8 max-w-md text-lg leading-10 text-[#4B5563] sm:text-[15px] sm:leading-9'>
-                        DuskSkin brings together premium skincare and makeup, crafted for beauty at every shade. Every product is selected to feel luxurious, effective, and worth cherishing.
+                        Premium yet affordable skincare and cosmetics for every shade and skin type, curated from Korea and Indonesia to help you glow with confidence.
                     </p>
                 </div>
 

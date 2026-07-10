@@ -16,7 +16,7 @@ const Announcement = () => {
           margin: 0,
         }}
       >
-        Get FREE SHIPPING on orders above PKR 2,500
+        Get FREE SHIPPING on orders above PKR 11,000
       </div>
     </div>
   )

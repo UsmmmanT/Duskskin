@@ -4,6 +4,7 @@ export const CATEGORIES = [
   { label: 'New', value: 'New' },
   { label: 'Makeup', value: 'Makeup' },
   { label: 'Skincare', value: 'Skincare' },
+  { label: 'Multivitamins', value: 'Multivitamins' },
   { label: 'Tools & Brushes', value: 'Tools & Brushes' },
   { label: 'Hair', value: 'Hair' },
   { label: 'Bath & Body', value: 'Bath & Body' },

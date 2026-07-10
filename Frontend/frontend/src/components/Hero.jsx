@@ -13,19 +13,11 @@ const Hero = () => {
                 minHeight: '65vh',
             }}
         >
-            <div className="absolute inset-0 bg-black/25" />
-            
             {/* Text Content */}
             <div className="relative z-10 flex flex-col items-center justify-end w-full pb-8 sm:pb-12 md:pb-16 px-4 text-center flex-1">
-               
-                
                 <Link
                     to="/collection"
-                    className="px-5 sm:px-7 py-2 sm:py-3 text-xs sm:text-sm font-medium tracking-widest text-black uppercase transition-all duration-300 hover:opacity-90"
-                    style={{
-                        backgroundColor: 'var(--color-brand-primary)',
-                        borderRadius: '0px'
-                    }}
+                    className="inline-flex items-center justify-center rounded-none border border-black bg-[#f098ac] px-6 py-3 text-sm font-medium uppercase tracking-[0.2em] text-black transition hover:opacity-90"
                 >
                     Shop Now
                 </Link>
