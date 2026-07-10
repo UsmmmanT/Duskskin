@@ -27,9 +27,7 @@ const About = () => {
             <div className='flex h-full w-full max-w-sm flex-col justify-center rounded-lg border border-[#e8c8b1] bg-[#fff2f6] px-8 py-8 text-center shadow-lg'>
               <h3 className='text-lg font-semibold text-[#2f1d14]'>About Duskskin</h3>
               <p className='mt-4 text-sm leading-7 text-[#4e392d]'>
-                Duskskin brings together premium yet affordable skincare and cosmetics for every shade and skin type. We carefully curate products from Korea, Indonesia, Japan, and Pakistan to offer formulas that balance innovation, quality, and everyday ease of use.
-                <br className='hidden sm:block' />
-                From glow-boosting essentials to routine favorites, our collection is designed to support healthier, more radiant skin and help you feel confident in your beauty journey every day.
+                Duskskin brings together premium yet affordable skincare and cosmetics for every shade and skin type. Based in Pakistan, we carefully import and curate high-quality skincare and beauty products from Korea, Indonesia, and Japan, alongside trusted local favorites, to offer formulas that balance innovation, quality, and everyday ease of use. From glow-boosting essentials to routine favorites, our collection is designed to support healthier, more radiant skin and help you feel confident in your beauty journey every day.
               </p>
 
               <div className='mt-6 flex items-center justify-center gap-4 text-2xl'>
