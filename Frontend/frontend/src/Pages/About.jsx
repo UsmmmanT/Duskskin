@@ -24,7 +24,7 @@ const About = () => {
 
           {/* Right: Concise About Card */}
           <div className='flex items-center justify-center h-full'>
-            <div className='flex h-full w-full max-w-sm flex-col justify-center rounded-lg border border-[#e8c8b1] bg-[#ffe4ec] px-8 py-8 text-center shadow-lg'>
+            <div className='flex h-full w-full max-w-sm flex-col justify-center rounded-lg border border-[#e8c8b1] bg-[#fff2f6] px-8 py-8 text-center shadow-lg'>
               <h3 className='text-lg font-semibold text-[#2f1d14]'>About Duskskin</h3>
               <p className='mt-4 text-sm leading-7 text-[#4e392d]'>
                 Duskskin brings together premium yet affordable skincare and cosmetics for every shade and skin type. We carefully curate products from Korea, Indonesia, Japan, and Pakistan to offer formulas that balance innovation, quality, and everyday ease of use.

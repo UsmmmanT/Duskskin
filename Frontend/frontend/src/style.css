@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-  --color-brand-primary: #f098ac;      /* Deep forest green — nav, buttons, accents */
+  --color-brand-primary: #f8ccd6;      /* Lightened pink for nav, buttons, accents */
   --color-brand-secondary: #000000;    /* Warm gold — highlights, hover states */
   --color-brand-accent: #F2EDE4;       /* Warm cream — backgrounds, cards */
   --color-brand-dark: #1A2E27;         /* Near-black green — footer, overlays */
@@ -46,7 +46,7 @@ a.active hr {
 }
 @media (max-width: 600px) {
  a.active{
-  background-color:#FFE3E9;
+  background-color:#FFF1F5;
   color:rgb(0, 0, 0);
  }
 }

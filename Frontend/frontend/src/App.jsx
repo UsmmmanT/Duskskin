@@ -12,14 +12,13 @@ import Orders from './Pages/Orders'
 import  NavBar  from './components/NavBar'
 import Footer from './components/Footer'
 import SearchBar from './components/SearchBar'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (
     <div className="w-full m-0">
      <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] m-0 p-0">
-     <ToastContainer/>
        <NavBar/>
        <SearchBar/>
      </div>
@@ -37,6 +36,7 @@ const App = () => {
        </Routes>
        <Footer/>
      </div>
+     <ToastContainer position='top-right' />
      
        
      
