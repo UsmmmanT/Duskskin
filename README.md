@@ -1,7 +1,11 @@
-<<<<<<< HEAD
-# Brewphoria
-E-commerce website for coffee and chocolate brand. Built using MERN stack.
-=======
 # Duskskin
-E-commerce webite for beauty products. MERN stack used.
->>>>>>> 177d472799569617fb18f16ae3ace6915f0e70f2
+E-commerce website for beauty products brand. Built using MERN stack.
+Seperate Admin page to handle product management.
+Website is deployed on vercel.
+
+Deployed Webite Links:
+Frontend:https://duskskin-frontend.vercel.app/
+Admin:https://duskskin-admin.vercel.app/
+
+
+
