@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import logo2 from '../images/duskskin_logo.svg'
+import logo2 from '../images/duskskin_logo.png'
 import search from '../images/search.png'
 import user from '../images/user.png'
 import coffeeShop from '../images/coffeeShop.png'
@@ -16,7 +16,7 @@ const NavBar = () => {
 
   const navLinks = [
     { to: '/', label: 'HOME' },
-    { to: '/collection', label: 'Supplements' },
+    { to: '/collection', label: 'CATEGORIES' },
     { to: '/about', label: 'ORIGINS' },
     { to: '/contact', label: 'CONTACT' },
   ]
