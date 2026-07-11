@@ -50,7 +50,7 @@ const normalizeProductPricing = (product) => {
 //function for add product
 const addProduct=async (req,res)=>{
  try {
-    const { name, description, price, sizePrices, category, sizes, bestSeller, bestseller } = req.body;
+    const { name, description, price, sizePrices, category, subCategory, sizes, bestSeller, bestseller } = req.body;
     const image1=req.files.image1 && req.files.image1[0]
     const image2=req.files.image2 && req.files.image2[0]
     const image3=req.files.image3 && req.files.image3[0]
@@ -75,6 +75,7 @@ const addProduct=async (req,res)=>{
         price:lowestPrice,
         sizePrices: parsedSizePrices,
         category,
+        subCategory: subCategory || '',
         image: imagesUrl,
         sizes: parsedSizes,
         bestSeller: (bestSeller ?? bestseller) === 'true',
